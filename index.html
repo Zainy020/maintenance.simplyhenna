@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="De website van Simply Henna wordt momenteel bijgewerkt."
+    content="De website van Simply Henna wordt momenteel bijgewerkt. We zijn zo terug."
   >
 
   <meta name="robots" content="noindex, nofollow">
@@ -39,6 +39,10 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       min-height: 100vh;
 
@@ -56,20 +60,18 @@
         var(--background);
 
       color: var(--brown);
-
       font-family: "Poppins", sans-serif;
 
       display: flex;
       align-items: center;
       justify-content: center;
 
-      padding: 30px 20px;
+      padding: 35px 20px;
     }
 
     .page {
       width: 100%;
       max-width: 760px;
-
       text-align: center;
     }
 
@@ -92,7 +94,6 @@
       height: 9px;
 
       background: var(--brown);
-
       border-radius: 50%;
     }
 
@@ -102,7 +103,7 @@
       border: 1px solid var(--border);
       border-radius: 30px;
 
-      padding: 55px 55px 45px;
+      padding: 55px;
 
       box-shadow:
         0 25px 70px rgba(78, 52, 46, 0.09);
@@ -117,7 +118,6 @@
       margin: 0 auto 25px;
 
       border-radius: 50%;
-
       background: var(--light-brown);
 
       display: flex;
@@ -134,7 +134,6 @@
 
       font-size: clamp(42px, 7vw, 67px);
       font-weight: 400;
-
       line-height: 1.05;
 
       color: var(--dark-brown);
@@ -188,7 +187,7 @@
     .countdown-section {
       margin-top: 38px;
 
-      padding: 30px 25px;
+      padding: 32px 25px;
 
       background: rgba(234, 222, 213, 0.42);
 
@@ -216,7 +215,7 @@
       font-size: 27px;
       font-weight: 400;
 
-      margin-bottom: 25px;
+      margin-bottom: 27px;
     }
 
     .countdown {
@@ -272,7 +271,81 @@
 
       font-family: "DM Serif Display", serif;
 
-      font-size: 31px;
+      font-size: 30px;
+    }
+
+    .socials {
+      margin-top: 30px;
+
+      padding: 28px;
+
+      background: rgba(255, 255, 255, 0.45);
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    .socials-title {
+      color: var(--dark-brown);
+
+      font-family: "DM Serif Display", serif;
+
+      font-size: 27px;
+
+      margin-bottom: 7px;
+    }
+
+    .socials-text {
+      color: var(--soft-brown);
+
+      font-size: 13px;
+      line-height: 1.7;
+
+      margin-bottom: 19px;
+    }
+
+    .social-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+    }
+
+    .social-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 130px;
+
+      padding: 12px 22px;
+
+      background: var(--brown);
+      color: #ffffff;
+
+      border-radius: 999px;
+
+      text-decoration: none;
+
+      font-size: 13px;
+      font-weight: 500;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .social-button:hover {
+      transform: translateY(-2px);
+
+      background: var(--dark-brown);
+
+      box-shadow:
+        0 8px 20px rgba(78, 52, 46, 0.16);
     }
 
     .appointment {
@@ -331,6 +404,10 @@
     }
 
     @media (max-width: 600px) {
+      body {
+        padding: 25px 14px;
+      }
+
       .card {
         padding: 45px 20px 38px;
 
@@ -362,6 +439,14 @@
 
       .separator {
         font-size: 34px;
+      }
+
+      .socials {
+        padding: 25px 18px;
+      }
+
+      .social-button {
+        width: 100%;
       }
     }
   </style>
@@ -400,7 +485,7 @@
         </p>
 
         <p class="expected-time" id="expectedTime">
-          Laden...
+          Dinsdag 14 juli om 01:00
         </p>
 
         <div class="countdown" id="countdown">
@@ -432,6 +517,41 @@
 
       </section>
 
+      <section class="socials">
+
+        <p class="socials-title">
+          Volg nu onze socials! ✨
+        </p>
+
+        <p class="socials-text">
+          Terwijl je wacht, volg Simply Henna op Instagram en TikTok
+          voor designs, updates en meer. 🤎
+        </p>
+
+        <div class="social-buttons">
+
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-button"
+          >
+            Instagram
+          </a>
+
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-button"
+          >
+            TikTok
+          </a>
+
+        </div>
+
+      </section>
+
       <div class="appointment">
 
         <strong>Heb je al een afspraak?</strong>
@@ -452,55 +572,24 @@
   </main>
 
   <script>
-    /*
-      ==========================================
-      STEL HIER DE VERWACHTE TERUGKEERTIJD IN
-      ==========================================
-
-      Formaat:
-      JAAR-MAAND-DAGTUUR:MINUTEN:SECONDEN+02:00
-
-      +02:00 = Nederlandse zomertijd
-      +01:00 = Nederlandse wintertijd
-    */
-
     const returnTime = new Date(
-      "2026-07-13T23:30:00+02:00"
+      "2026-07-14T01:00:00+02:00"
     );
 
-    const expectedTime = document.getElementById(
-      "expectedTime"
-    );
+    const countdown =
+      document.getElementById("countdown");
 
-    const countdown = document.getElementById(
-      "countdown"
-    );
+    const expiredMessage =
+      document.getElementById("expiredMessage");
 
-    const expiredMessage = document.getElementById(
-      "expiredMessage"
-    );
+    const hoursElement =
+      document.getElementById("hours");
 
-    const hoursElement = document.getElementById(
-      "hours"
-    );
+    const minutesElement =
+      document.getElementById("minutes");
 
-    const minutesElement = document.getElementById(
-      "minutes"
-    );
-
-    const secondsElement = document.getElementById(
-      "seconds"
-    );
-
-    expectedTime.textContent =
-      new Intl.DateTimeFormat("nl-NL", {
-        weekday: "long",
-        day: "numeric",
-        month: "long",
-        hour: "2-digit",
-        minute: "2-digit",
-        timeZone: "Europe/Amsterdam"
-      }).format(returnTime);
+    const secondsElement =
+      document.getElementById("seconds");
 
     function updateCountdown() {
       const now = new Date();
@@ -516,17 +605,14 @@
         return;
       }
 
-      const totalSeconds = Math.floor(
-        difference / 1000
-      );
+      const totalSeconds =
+        Math.floor(difference / 1000);
 
-      const hours = Math.floor(
-        totalSeconds / 3600
-      );
+      const hours =
+        Math.floor(totalSeconds / 3600);
 
-      const minutes = Math.floor(
-        (totalSeconds % 3600) / 60
-      );
+      const minutes =
+        Math.floor((totalSeconds % 3600) / 60);
 
       const seconds =
         totalSeconds % 60;
