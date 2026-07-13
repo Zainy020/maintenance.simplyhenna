@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>We zijn zo terug | Simply Henna</title>
+
+  <meta
+    name="description"
+    content="De website van Simply Henna wordt momenteel bijgewerkt."
+  >
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --background: #f7f1eb;
+      --card: #fffaf6;
+      --brown: #4e342e;
+      --dark-brown: #3b2723;
+      --soft-brown: #8d6e63;
+      --light-brown: #eaded5;
+      --border: rgba(78, 52, 46, 0.12);
+      --warning: #d49b45;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 15% 20%,
+          rgba(141, 110, 99, 0.12),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 85% 80%,
+          rgba(78, 52, 46, 0.08),
+          transparent 35%
+        ),
+        var(--background);
+
+      color: var(--brown);
+
+      font-family: "Poppins", sans-serif;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px 20px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 760px;
+
+      text-align: center;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 30px;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-dot {
+      width: 9px;
+      height: 9px;
+
+      background: var(--brown);
+
+      border-radius: 50%;
+    }
+
+    .card {
+      background: rgba(255, 250, 246, 0.9);
+
+      border: 1px solid var(--border);
+      border-radius: 30px;
+
+      padding: 55px 55px 45px;
+
+      box-shadow:
+        0 25px 70px rgba(78, 52, 46, 0.09);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+
+      margin: 0 auto 25px;
+
+      border-radius: 50%;
+
+      background: var(--light-brown);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 30px;
+
+      animation: float 3s ease-in-out infinite;
+    }
+
+    h1 {
+      font-family: "DM Serif Display", serif;
+
+      font-size: clamp(42px, 7vw, 67px);
+      font-weight: 400;
+
+      line-height: 1.05;
+
+      color: var(--dark-brown);
+
+      margin-bottom: 20px;
+    }
+
+    .intro {
+      max-width: 530px;
+
+      margin: 0 auto;
+
+      color: var(--soft-brown);
+
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .status {
+      margin: 28px auto 0;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 11px 18px;
+
+      border: 1px solid var(--border);
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, 0.55);
+
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: var(--warning);
+
+      box-shadow:
+        0 0 0 5px rgba(212, 155, 69, 0.15);
+
+      animation: pulse 2s infinite;
+    }
+
+    .countdown-section {
+      margin-top: 38px;
+
+      padding: 30px 25px;
+
+      background: rgba(234, 222, 213, 0.42);
+
+      border: 1px solid var(--border);
+      border-radius: 22px;
+    }
+
+    .expected-label {
+      color: var(--soft-brown);
+
+      font-size: 12px;
+      font-weight: 600;
+
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+
+      margin-bottom: 7px;
+    }
+
+    .expected-time {
+      color: var(--dark-brown);
+
+      font-family: "DM Serif Display", serif;
+
+      font-size: 27px;
+      font-weight: 400;
+
+      margin-bottom: 25px;
+    }
+
+    .countdown {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      gap: 14px;
+    }
+
+    .time-block {
+      min-width: 88px;
+    }
+
+    .time-number {
+      display: block;
+
+      color: var(--dark-brown);
+
+      font-family: "DM Serif Display", serif;
+
+      font-size: clamp(38px, 7vw, 55px);
+
+      line-height: 1;
+    }
+
+    .time-label {
+      display: block;
+
+      color: var(--soft-brown);
+
+      font-size: 11px;
+
+      margin-top: 9px;
+
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .separator {
+      color: var(--soft-brown);
+
+      font-family: "DM Serif Display", serif;
+
+      font-size: 42px;
+      line-height: 0.9;
+    }
+
+    .expired-message {
+      display: none;
+
+      color: var(--dark-brown);
+
+      font-family: "DM Serif Display", serif;
+
+      font-size: 31px;
+    }
+
+    .appointment {
+      margin-top: 35px;
+
+      padding-top: 28px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .appointment strong {
+      display: block;
+
+      color: var(--dark-brown);
+
+      font-size: 14px;
+
+      margin-bottom: 7px;
+    }
+
+    .appointment p {
+      color: var(--soft-brown);
+
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer {
+      margin-top: 28px;
+
+      color: var(--soft-brown);
+
+      font-size: 12px;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 45px 20px 38px;
+
+        border-radius: 24px;
+      }
+
+      .icon {
+        width: 64px;
+        height: 64px;
+
+        font-size: 27px;
+      }
+
+      .intro {
+        font-size: 14px;
+      }
+
+      .countdown-section {
+        padding: 27px 10px;
+      }
+
+      .countdown {
+        gap: 5px;
+      }
+
+      .time-block {
+        min-width: 68px;
+      }
+
+      .separator {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <div class="brand">
+      <span class="brand-dot"></span>
+      Simply Henna
+    </div>
+
+    <section class="card">
+
+      <div class="icon">✨</div>
+
+      <h1>We zijn zo terug.</h1>
+
+      <p class="intro">
+        Achter de schermen werken we aan de website van Simply Henna.
+        Daarom is onze website tijdelijk niet beschikbaar.
+        We verwachten snel weer online te zijn. 🤎
+      </p>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        Website wordt bijgewerkt
+      </div>
+
+      <section class="countdown-section">
+
+        <p class="expected-label">
+          Verwacht terug
+        </p>
+
+        <p class="expected-time" id="expectedTime">
+          Laden...
+        </p>
+
+        <div class="countdown" id="countdown">
+
+          <div class="time-block">
+            <span class="time-number" id="hours">00</span>
+            <span class="time-label">Uur</span>
+          </div>
+
+          <span class="separator">:</span>
+
+          <div class="time-block">
+            <span class="time-number" id="minutes">00</span>
+            <span class="time-label">Min</span>
+          </div>
+
+          <span class="separator">:</span>
+
+          <div class="time-block">
+            <span class="time-number" id="seconds">00</span>
+            <span class="time-label">Sec</span>
+          </div>
+
+        </div>
+
+        <p class="expired-message" id="expiredMessage">
+          We zijn ieder moment terug… ✨
+        </p>
+
+      </section>
+
+      <div class="appointment">
+
+        <strong>Heb je al een afspraak?</strong>
+
+        <p>
+          Geen zorgen. Bestaande afspraken blijven gewoon staan
+          en worden niet beïnvloed door deze update.
+        </p>
+
+      </div>
+
+    </section>
+
+    <footer>
+      © <span id="year"></span> Simply Henna
+    </footer>
+
+  </main>
+
+  <script>
+    /*
+      ==========================================
+      STEL HIER DE VERWACHTE TERUGKEERTIJD IN
+      ==========================================
+
+      Formaat:
+      JAAR-MAAND-DAGTUUR:MINUTEN:SECONDEN+02:00
+
+      +02:00 = Nederlandse zomertijd
+      +01:00 = Nederlandse wintertijd
+    */
+
+    const returnTime = new Date(
+      "2026-07-13T23:30:00+02:00"
+    );
+
+    const expectedTime = document.getElementById(
+      "expectedTime"
+    );
+
+    const countdown = document.getElementById(
+      "countdown"
+    );
+
+    const expiredMessage = document.getElementById(
+      "expiredMessage"
+    );
+
+    const hoursElement = document.getElementById(
+      "hours"
+    );
+
+    const minutesElement = document.getElementById(
+      "minutes"
+    );
+
+    const secondsElement = document.getElementById(
+      "seconds"
+    );
+
+    expectedTime.textContent =
+      new Intl.DateTimeFormat("nl-NL", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Europe/Amsterdam"
+      }).format(returnTime);
+
+    function updateCountdown() {
+      const now = new Date();
+
+      const difference =
+        returnTime.getTime() - now.getTime();
+
+      if (difference <= 0) {
+        countdown.style.display = "none";
+
+        expiredMessage.style.display = "block";
+
+        return;
+      }
+
+      const totalSeconds = Math.floor(
+        difference / 1000
+      );
+
+      const hours = Math.floor(
+        totalSeconds / 3600
+      );
+
+      const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+      );
+
+      const seconds =
+        totalSeconds % 60;
+
+      hoursElement.textContent =
+        String(hours).padStart(2, "0");
+
+      minutesElement.textContent =
+        String(minutes).padStart(2, "0");
+
+      secondsElement.textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
